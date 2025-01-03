@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Màu nền nhẹ */
+}
+
+header {
+    background-color: #1cf123; /* Màu xanh lá cây */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 80px; /* Điều chỉnh kích thước logo */
+    margin-right: 10px; /* Khoảng cách giữa logo và tiêu đề */
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2em; /* Điều chỉnh kích thước tiêu đề */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Sử dụng flexbox cho danh sách */
+    justify-content: center; /* Căn giữa danh sách */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền tối với độ trong suốt */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.description {
+    background-color: #f1f8e9; /* Màu nền cho phần mô tả */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px; /* Khoảng cách giữa hình ảnh và mô tả */
+    text-align: left; /* Căn trái cho văn bản */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1cf123; /* Màu xanh lá cây */
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 1.5em; /* Giảm kích thước tiêu đề trên màn hình nhỏ */
+    }
+
+    nav ul li {
+        margin-right: 10px; /* Giảm khoảng cách giữa các mục */
+    }
+
+    .hero-text {
+        padding: 10px; /* Giảm padding cho văn bản hero */
+    }
+
+    .description {
+        padding: 15px; /* Giảm padding cho phần mô tả */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 60px; /* Giảm kích thước logo trên màn hình rất nhỏ */
+    }
+
+    .hero-text {
+        font-size: 0.9em; /* Giảm kích thước chữ cho văn bản hero */
+    }
+
+    nav ul {
+        flex-direction: column; /* Đặt danh sách theo chiều dọc */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Khoảng cách giữa các mục trong danh sách */
+    }
+} 

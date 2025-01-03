@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/about.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Giới Thiệu - Green Gains</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/image/logo.png" alt="logo">
+            <h1>Greengains</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="homeLink">Trang Chủ</a></li>
+                <li><a href="/templates/about.html">Giới Thiệu</a></li>
+                <li><a href="/templates/stored.html">Cửa hàng</a></li>
+                <li><a href="#">Hồ sơ</a></li>
+                <li id="registerLink"><a href="/templates/register.html">Đăng kí</a></li>
+                <li id="loginLink"><a href="/templates/login.html">Đăng nhập</a></li>
+                <li id="notification" style="display: none;">
+                    <a href="#" class="notification">🔔</a>
+                </li>
+                <li id="userProfile" style="display: none;">
+                    <a href="#" onclick="toggleDropdown()">
+                        <img src="/image/avatar.jpg" alt="Avatar" class="avatar">
+                        <span id="userName"></span>
+                    </a>
+                    <div id="dropdown" class="dropdown-content" style="display: none;">
+                        <a href="#" onclick="logout()">Đăng xuất</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>  
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Chào mừng đến với GREENGAINS</h2>
+            <p>Chúng tôi cam kết bảo vệ môi trường và tạo ra giá trị từ rác thải.</p>
+        </div>
+    </section>
+    <section class="description">
+        <h2>Giới Thiệu Về GREENGAINS</h2>
+        <p>GREENGAINS là một dự án khởi nghiệp sáng tạo trong lĩnh vực kinh doanh tạo tác động xã hội, nhằm giải quyết vấn đề rác thải và nâng cao ý thức bảo vệ môi trường. Với thông điệp "Biến rác thành cơ hội, bảo vệ môi trường, nhân đôi giá trị cho tương lai," GREENGAINS mang đến một mô hình độc đáo, nơi rác không chỉ là chất thải mà còn trở thành nguồn tài nguyên quý giá.</p>
+        <p>Thông qua nền tảng GREENGAINS, người dân được khuyến khích phân loại và tái chế rác thải tại nguồn. Đổi lại, họ sẽ nhận được những phần thưởng có giá trị thực tiễn như cây xanh hoặc các sản phẩm tái chế. Dự án không chỉ tạo động lực thay đổi hành vi tiêu dùng, mà còn đóng góp tích cực vào việc giảm thiểu rác thải và nâng cao chất lượng môi trường sống. Đây là một bước tiến quan trọng hướng tới việc xây dựng một cộng đồng bền vững và văn minh.</p>
+    </section>
+    <footer>
+        <p>Copyright © 2024</p>
+        <p>Địa chỉ: Số 10, Huỳnh Văn Nghệ, P. Bửu Long, Tp. Biên Hòa - Tỉnh Đồng Nai</p>
+        <p>Tel: 028.3535.7439 | Hotline: 0914.265.254</p>
+    </footer>
+    <script src="static/about.js"></script>
+    <script>
+        document.getElementById('homeLink').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Điều hướng đến trang chính
+        });
+
+        // Hiển thị tên người dùng và Avatar nếu đã đăng nhập
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userProfile').style.display = 'block';
+            document.getElementById('registerLink').style.display = 'none';
+            document.getElementById('loginLink').style.display = 'none';
+            document.getElementById('notification').style.display = 'block'; // Hiện chuông thông báo
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = 'templates/login.html'; // Chuyển hướng về trang đăng nhập
+        }
+    </script>
+</body>
+</html>

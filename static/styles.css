@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Màu nền nhẹ */
+}
+
+header {
+    background-color: #00ff08; /* Màu xanh lá cây */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex; /* Sử dụng flexbox để căn chỉnh */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between; /* Tạo khoảng cách giữa logo và nav */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 80px; /* Điều chỉnh kích thước logo */
+    margin-right: 10px; /* Khoảng cách giữa logo và tiêu đề */
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2em; /* Điều chỉnh kích thước tiêu đề */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Sử dụng flexbox cho danh sách */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.images {
+    position: relative; /* Để lớp overlay có thể được định vị chính xác */
+}
+
+.images img {
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+}
+
+.description {
+    background-color: #ffffff; /* Màu nền cho phần mô tả */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px; /* Khoảng cách giữa hình ảnh và mô tả */
+}
+
+footer {
+    background-color: #00ff08; /* Màu xanh lá cây */
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 1.5em; /* Giảm kích thước tiêu đề trên màn hình nhỏ */
+    }
+
+    nav ul li {
+        margin-right: 10px; /* Giảm khoảng cách giữa các mục */
+    }
+
+    .description {
+        padding: 15px; /* Giảm padding cho phần mô tả */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 60px; /* Giảm kích thước logo trên màn hình rất nhỏ */
+    }
+
+    nav ul {
+        flex-direction: column; /* Đặt danh sách theo chiều dọc */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Khoảng cách giữa các mục trong danh sách */
+    }
+}
